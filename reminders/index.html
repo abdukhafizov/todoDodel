@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Todo list</h1>
+        <form name="reminders">
+            <input class="true" type="text" placeholder="What do you want us to remind you?" name="task"> 
+            <button>Add</button>
+        </form>
+    </header>
+    <br>
+    <hr>
+
+    <div class="container">
+
+    </div>
+
+    <div class="modal-bg"></div>
+    <div class="modal">
+        <input type="text">
+        <button id="saveChange">save</button>
+        <button class="close">close</button>
+    </div>
+
+    <div class="modal_del_bg"></div>
+    <div class="modal_del">
+        <h1>Вы точно уверены что хотите удалить эту запись?</h1>
+        <button>Да</button>
+        <button class="close_bg">Нет</button>
+    </div>
+
+
+    <style>
+        .item {
+            width: 100%;
+            padding: 20px 25px;
+            border: 2px solid #007FFF;
+            border-radius: 14px;
+            background-color: #F0F0F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .item .col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .item .col .title {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .item .edit {
+            all: unset;
+            width: 20px;
+            height: 20px;
+            background-image: url('./img/edit.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+
+        }
+
+        .item .delete {
+            all: unset;
+            width: 20px;
+            height: 20px;
+            background-image: url('./img/del.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            padding-right: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            transition: .5s ease;
+        }
+
+        .fade {
+            animation: fade .7s ease;
+
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                display: none;
+            }
+        }
+    </style>
+</body>
+<script src="./script.js"></script>
+
+</html>
